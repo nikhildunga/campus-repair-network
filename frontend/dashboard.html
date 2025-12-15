@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard - Campus Connect Repair</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">🔧 Campus Connect Repair</div>
+    <div class="nav-right">
+      <span class="user-info"></span>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Header -->
+    <div style="margin: 2rem 0;">
+      <h1>Your Complaints</h1>
+      <p class="text-muted">Track and manage your repair complaints</p>
+    </div>
+
+    <!-- Action Button -->
+    <div style="margin-bottom: 2rem;">
+      <a href="complaint_form.html" class="btn btn-primary">+ Submit New Complaint</a>
+    </div>
+
+    <!-- Complaints List -->
+    <div id="complaintsList"></div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/student.js"></script>
+
+  <script>
+    requireAuth();
+    
+    // Check if user is student
+    if (auth.user.role !== 'student') {
+      window.location.href = 'admin_dashboard.html';
+    }
+  </script>
+</body>
+</html>

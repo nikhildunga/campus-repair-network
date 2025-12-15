@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login - Campus Connect Repair</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <h1>Admin Login</h1>
+      <p class="subtitle">Admin credentials required</p>
+
+      <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
+        <div class="form-group">
+          <label for="email">Admin Email</label>
+          <input type="email" id="email" value="admin@campus.com" placeholder="admin@campus.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" value="Admin@123456" placeholder="Enter admin password" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Admin Login</button>
+      </form>
+
+      <div class="auth-link" style="margin-top: 1.5rem; font-size: 0.9rem; color: #9ca3af;">
+        <strong>Default Credentials:</strong><br>
+        Email: admin@campus.com<br>
+        Password: Admin@123456
+      </div>
+
+      <div class="auth-link">
+        <a href="index.html">← Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

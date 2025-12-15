@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Complaint - Campus Connect Repair</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">🔧 Campus Connect Repair</div>
+    <div class="nav-right">
+      <span class="user-info"></span>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div style="max-width: 600px; margin: 2rem auto;">
+      <h1 style="margin-bottom: 2rem;">Submit a Repair Complaint</h1>
+
+      <form onsubmit="handleComplaintSubmit(event)">
+        <div class="form-group">
+          <label for="title">Issue Title *</label>
+          <input type="text" id="title" placeholder="e.g., Broken Bench in Library" required>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description *</label>
+          <textarea id="description" placeholder="Describe the issue in detail..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location *</label>
+          <input type="text" id="location" placeholder="e.g., Building A, Floor 3, Room 301" required>
+        </div>
+
+        <div class="form-group">
+          <label for="category">Category *</label>
+          <select id="category" required>
+            <option value="">Select a category</option>
+            <option value="Electrical">Electrical</option>
+            <option value="Plumbing">Plumbing</option>
+            <option value="Classroom">Classroom</option>
+            <option value="Lab">Lab</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="photo">Photo (Optional)</label>
+          <input type="file" id="photo" accept="image/*" onchange="previewPhoto(event)">
+          <p class="text-muted" style="font-size: 0.85rem;">Accepted formats: JPEG, PNG, GIF. Max size: 5MB</p>
+        </div>
+
+        <div id="photoPreview"></div>
+
+        <button type="submit" class="btn btn-primary btn-block">Submit Complaint</button>
+        <a href="dashboard.html" class="btn btn-secondary btn-block"
+          style="margin-top: 1rem; text-align: center; text-decoration: none;">Back to Dashboard</a>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/auth.js?v=4"></script>
+  <script src="js/student.js?v=4"></script>
+
+  <script>
+    requireAuth();
+  </script>
+</body>
+
+</html>

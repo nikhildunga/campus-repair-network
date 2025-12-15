@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Connect Repair - Home</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">🔧 Campus Connect Repair</div>
+    <div class="nav-right">
+      <span class="user-info"></span>
+      <button class="logout-btn" onclick="logout()" style="display: none;">Logout</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%); color: white; text-align: center; padding: 4rem 1rem;">
+    <h1 style="font-size: 3rem; margin-bottom: 1rem;">Welcome to Campus Connect Repair</h1>
+    <p style="font-size: 1.2rem; margin-bottom: 2rem;">Report campus issues, track progress, and get things fixed!</p>
+    
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a href="login.html" class="btn btn-primary">Student Login</a>
+      <a href="register.html" class="btn btn-secondary">Student Register</a>
+      <a href="admin_login.html" class="btn" style="background-color: #10b981; color: white;">Admin Login</a>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0;">
+      
+      <div class="card">
+        <div class="card-body">
+          <h3 style="margin-bottom: 1rem;">🎓 For Students</h3>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;">✅ Report campus issues easily</li>
+            <li style="margin-bottom: 0.5rem;">✅ Upload photos of problems</li>
+            <li style="margin-bottom: 0.5rem;">✅ Track complaint status</li>
+            <li style="margin-bottom: 0.5rem;">✅ Get admin remarks</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h3 style="margin-bottom: 1rem;">🛠️ For Admins</h3>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;">✅ View all complaints</li>
+            <li style="margin-bottom: 0.5rem;">✅ Update complaint status</li>
+            <li style="margin-bottom: 0.5rem;">✅ Add remarks for students</li>
+            <li style="margin-bottom: 0.5rem;">✅ Delete complaints</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h3 style="margin-bottom: 1rem;">📊 Features</h3>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.5rem;">✅ JWT Authentication</li>
+            <li style="margin-bottom: 0.5rem;">✅ File uploads</li>
+            <li style="margin-bottom: 0.5rem;">✅ Dashboard stats</li>
+            <li style="margin-bottom: 0.5rem;">✅ Real-time updates</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer style="background-color: var(--light-bg); padding: 2rem; text-align: center; margin-top: 3rem; color: #6b7280;">
+    <p>&copy; 2024 Campus Connect Repair System. All rights reserved.</p>
+  </footer>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

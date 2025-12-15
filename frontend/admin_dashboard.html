@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Campus Connect Repair</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">🔧 Campus Connect Repair - Admin</div>
+    <div class="nav-right">
+      <span class="user-info"></span>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Header -->
+    <div style="margin: 2rem 0;">
+      <h1>Admin Dashboard</h1>
+      <p class="text-muted">Manage and track all repair complaints</p>
+    </div>
+
+    <!-- Statistics Section -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Total Complaints</div>
+        <div class="stat-value" id="totalCount">0</div>
+      </div>
+
+      <div class="stat-card pending">
+        <div class="stat-label">Pending</div>
+        <div class="stat-value" id="pendingCount">0</div>
+      </div>
+
+      <div class="stat-card in-progress">
+        <div class="stat-label">In Progress</div>
+        <div class="stat-value" id="inProgressCount">0</div>
+      </div>
+
+      <div class="stat-card completed">
+        <div class="stat-label">Completed</div>
+        <div class="stat-value" id="completedCount">0</div>
+      </div>
+    </div>
+
+    <!-- Filter Section -->
+    <div
+      style="background: white; padding: 1.5rem; border-radius: 0.75rem; box-shadow: var(--card-shadow); margin-bottom: 2rem;">
+      <h3 style="margin-bottom: 1rem;">Filter Complaints</h3>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <button onclick="filterByStatus('all')" class="btn btn-secondary" style="background-color: #6b7280;">All
+          Status</button>
+        <button onclick="filterByStatus('Pending')" class="btn btn-warning">Pending</button>
+        <button onclick="filterByStatus('In-Progress')" class="btn btn-primary">In Progress</button>
+        <button onclick="filterByStatus('Completed')" class="btn btn-success">Completed</button>
+      </div>
+    </div>
+
+    <!-- Complaints Table -->
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Student Email</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>Priority</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="complaintsList">
+          <tr>
+            <td colspan="8" class="text-center">Loading complaints...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Edit Complaint</h2>
+      </div>
+
+      <div id="complaintDetails"
+        style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #e5e7eb;"></div>
+
+      <input type="hidden" id="editComplaintId">
+
+      <div class="form-group">
+        <label for="editStatus">Status</label>
+        <select id="editStatus">
+          <option value="Pending">Pending</option>
+          <option value="In-Progress">In-Progress</option>
+          <option value="Completed">Completed</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="editPriority">Priority</label>
+        <select id="editPriority">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="editRemarks">Remarks</label>
+        <textarea id="editRemarks" placeholder="Add remarks for the student..."></textarea>
+      </div>
+
+      <div class="modal-footer">
+        <button onclick="closeModal('editModal')" class="btn btn-secondary">Cancel</button>
+        <button onclick="updateComplaint()" class="btn btn-primary">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/auth.js?v=2"></script>
+  <script src="js/admin.js?v=3"></script>
+
+  <script>
+    requireAdminAuth();
+  </script>
+</body>
+
+</html>
